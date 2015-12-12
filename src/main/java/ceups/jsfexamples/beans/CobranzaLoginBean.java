@@ -38,7 +38,7 @@ public class CobranzaLoginBean implements Serializable {
 				FacesContext.getCurrentInstance().addMessage(null, message);*/	
 				
 				
-					NavigatorUtil.redireccionarAUrl("/pf/inicio.xhtml");
+					NavigatorUtil.redireccionarAUrl("../pf/inicio.xhtml");
 				 	
 				
 			}else{

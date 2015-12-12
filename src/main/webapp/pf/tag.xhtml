@@ -1,0 +1,27 @@
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Tag Cloud Demo</title>			
+	</h:head>
+
+	<h:body>
+		
+		<h:form id="form">
+			
+			<p:growl id="msgs" showDetail="true" />
+		    <p:tagCloud id="tagCloud" model="#{tagBean.model}">
+		        <p:ajax event="select" update="msgs" listener="#{tagBean.onSelect}" />
+		    </p:tagCloud>	
+		    
+		    <p:commandButton  value="Cambiar Data" ajax="true" actionListener="#{tagBean.changeLabels}" process="@this" update="tagCloud">
+		    
+		    </p:commandButton>	
+			
+		</h:form>
+	
+	</h:body>	
+
+</html>

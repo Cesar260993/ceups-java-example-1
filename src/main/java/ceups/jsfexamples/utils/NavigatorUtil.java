@@ -14,12 +14,7 @@ public class NavigatorUtil {
 	public static void redireccionarAUrl(String url) throws ServletException, IOException{
 		ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 
-        RequestDispatcher dispatcher = ((ServletRequest) context.getRequest())
-                .getRequestDispatcher(url);
-
-        dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
-
-        FacesContext.getCurrentInstance().responseComplete();
+		context.redirect(url);
 		
 	}	
 }
