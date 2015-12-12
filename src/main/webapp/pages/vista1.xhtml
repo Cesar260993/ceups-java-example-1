@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head >
+    <title>Sample JSF Application</title>
+</h:head>
+
+<h:body>
+	
+	<h:form id="formularioTest"   >	
+		
+		
+		Bienvenido: #{userdatabean.usuario.nombreCompleto}
+		
+		<br/><br/>
+		
+		<h:panelGrid id="panelFormulario" columns="2">		
+			<h:outputLabel value="Ingresa tu nombre de usuario:"></h:outputLabel>   
+	        <h:inputText id="username" value="#{vista1bean.usuario.nombreDeUsuario}" />
+
+			<h:outputLabel value="Ingresa tu nombre completo:"></h:outputLabel>  
+	        <h:inputText id="fullname" value="#{vista1bean.usuario.nombreCompleto}" />
+			
+			<f:facet name="footer">
+				
+				<h:commandButton  value="Procesar Con Ajax">
+		        	<f:ajax execute="panelFormulario" render="output" listener="#{vista1bean.guardarNombreDeUsuario()}" ></f:ajax>	
+		        </h:commandButton>
+				
+			</f:facet>			
+		</h:panelGrid>  
+        
+       
+        <h:outputText id="output" value="#{vista1bean.respuestaAUsuario}" />
+	
+	</h:form>
+
+</h:body>
+
+</html>
